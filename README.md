@@ -173,6 +173,6 @@ Publish your app by going into settings in your GitHub repository. Under the hea
 
 Your app should be published here `https://<username>.github.io/<repo-name>`
 
-References
+## References
 
 - [Handling events](https://reactjs.org/docs/handling-events.html)
