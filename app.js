@@ -40,13 +40,14 @@ class Counter extends React.Component {
 
 function App() {
   const counters = [0, -2, 5, -3, 8];
-  return (
-    <React.Fragment>
-      {counters.map(count => (
-        <Counter initialCount={count} />
-      ))}
-    </React.Fragment>
-  );
+
+  // It is safe to use the index of this array because it is static. If we `push()` or `pop()` this array then you should no longer use it as a key since index is no longer unique
+
+  const items = counters.map((count, index) => (
+    <Counter key={index} initialCount={count} />
+  ));
+
+  return <React.Fragment>{items}</React.Fragment>;
 }
 
 ReactDOM.render(<App />, document.getElementById("app"));
